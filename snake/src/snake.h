@@ -13,7 +13,6 @@ typedef struct vector {
 } Vector2;
 
 typedef struct snake {
-    int x, y;
     Vector2 dir;
     Block *head;
 } Snake;

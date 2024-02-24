@@ -24,13 +24,14 @@ Snake snake_(int x, int y, Vector2 dir, int size) {
 }
 
 void move(Snake *snake, Vector2 dir){
+    if (dir.x != -snake->dir.x && dir.y != -snake->dir.y) snake->dir = dir;
+
     Block* new = malloc(sizeof(Block));
     new->x = snake->head->x + snake->dir.x;
     new->y = snake->head->y + snake->dir.y;
     new->next = snake->head;
 
     snake->head = new;
-    snake->dir = dir;
 
     Block *current = snake->head;
 
